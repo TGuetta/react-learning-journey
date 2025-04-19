@@ -1,10 +1,11 @@
-import Welcome from "./Welcome";
+import Greeting from "./Greeting";
 
 function App() {
   return (
     <div>
-      <h1>Hello React 👋</h1>
-      <Welcome name="Tomer" />
+      <Greeting name="John" timeOfDay="Morning" />
+      <Greeting name="Jane" timeOfDay="Afternoon" />
+      <Greeting name="Doe" timeOfDay="Evening" />
     </div>
   );
 }
