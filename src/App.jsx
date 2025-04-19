@@ -1,11 +1,10 @@
-import Greeting from "./Greeting";
+import ToggleMessage from "./ToggleMessage";
 
 function App() {
   return (
     <div>
-      <Greeting name="John" timeOfDay="Morning" />
-      <Greeting name="Jane" timeOfDay="Afternoon" />
-      <Greeting name="Doe" timeOfDay="Evening" />
+      <h1>Events & Conditions</h1>
+      <ToggleMessage />
     </div>
   );
 }
