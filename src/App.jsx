@@ -1,10 +1,10 @@
-import NameForm from "./NameForm";
+import ContactForm from "./ContactForm";
 
 function App() {
   return (
     <div>
-      <h1>Forms & Controlled Inputs</h1>
-      <NameForm />
+      <h1>Multiple Inputs & Validation</h1>
+      <ContactForm />
     </div>
   );
 }
