@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import { useContext } from "react";
+import { FormContext } from "../context/FormContext";
+
 import InputField from "./InputField";
 import TextareaField from "./TextareaField";
 
@@ -7,11 +10,13 @@ import "./ContactForm.css";
 
 function ContactForm() {
   // Step 1: Create one state object to hold all input values
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // });
+  const { formData, setFormData } = useContext(FormContext);
+  // formData is an object that holds the values of the inputs
 
   // Step 2: Create state to track validation error
   const [error, setError] = useState("");
