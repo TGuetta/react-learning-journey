@@ -41,7 +41,7 @@ function ContactForm() {
   }
 
   return (
-    <div>
+    <div className="form-preview-wrapper">
       <form onSubmit={handleSubmit}>
         <h2>Contact Us</h2>
 
@@ -85,12 +85,14 @@ function ContactForm() {
 
         <button type="submit">Send</button>
       </form>
-      {/* ✅ This part is now inside the <div> */}
-      <hr />
-      <h3>Live Preview</h3>
-      <p>Name: {formData.name}</p>
-      <p>Email: {formData.email}</p>
-      <p>Message: {formData.message}</p>
+
+      <div className="live-preview">
+        <hr />
+        <h3>Live Preview</h3>
+        <p>Name: {formData.name}</p>
+        <p>Email: {formData.email}</p>
+        <p>Message: {formData.message}</p>
+      </div>
     </div>
   );
 }

@@ -23,6 +23,8 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
+  background-color: white; /* ✅ Set the background */
+  color: rgb(200, 33, 33); /* ✅ Set the text color */
 }
 
 button {
@@ -46,4 +48,23 @@ hr {
 
 h3 {
   text-align: center;
+}
+
+.form-preview-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap; /* stack vertically on smaller screens */
+  padding: 20px;
+}
+
+.live-preview {
+  max-width: 400px;
+  min-width: 250px;
+  background-color: #7ab564;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
