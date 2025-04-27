@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./ContactForm.css";
 
 function ContactForm() {
   // Step 1: Create one state object to hold all input values
@@ -40,49 +41,57 @@ function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Contact Us</h2>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <h2>Contact Us</h2>
 
-      <label>
-        Name:
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-      </label>
+        <label>
+          Name:
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+        </label>
 
-      <br />
+        <br />
 
-      <label>
-        Email:
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-      </label>
+        <label>
+          Email:
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </label>
 
-      <br />
+        <br />
 
-      <label>
-        Message:
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-        />
-      </label>
+        <label>
+          Message:
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+          />
+        </label>
 
-      <br />
+        <br />
 
-      {/* Show error message if exists */}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+        {/* Show error message if exists */}
+        {error && <p style={{ color: "red" }}>{error}</p>}
 
-      <button type="submit">Send</button>
-    </form>
+        <button type="submit">Send</button>
+      </form>
+      {/* ✅ This part is now inside the <div> */}
+      <hr />
+      <h3>Live Preview</h3>
+      <p>Name: {formData.name}</p>
+      <p>Email: {formData.email}</p>
+      <p>Message: {formData.message}</p>
+    </div>
   );
 }
 
