@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import InputField from "./InputField";
+import TextareaField from "./TextareaField";
 
 import "./ContactForm.css";
 
@@ -66,14 +67,12 @@ function ContactForm() {
 
         <br />
 
-        <label>
-          Message:
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-          />
-        </label>
+        <TextareaField
+          label="Message:"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+        />
 
         <br />
 
