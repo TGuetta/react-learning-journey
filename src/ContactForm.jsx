@@ -1,4 +1,7 @@
 import { useState } from "react";
+
+import InputField from "./InputField";
+
 import "./ContactForm.css";
 
 function ContactForm() {
@@ -45,27 +48,21 @@ function ContactForm() {
       <form onSubmit={handleSubmit}>
         <h2>Contact Us</h2>
 
-        <label>
-          Name:
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-        </label>
+        <InputField
+          label="Name:"
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
 
-        <br />
-
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </label>
+        <InputField
+          label="Email:"
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
 
         <br />
 
