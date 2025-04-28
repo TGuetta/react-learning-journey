@@ -1,7 +1,10 @@
 import { useState } from "react";
 
-import { useContext } from "react";
-import { FormContext } from "../context/FormContext";
+// import { useContext } from "react";
+// import { FormContext } from "../context/FormContext";
+
+import { useSelector, useDispatch } from "react-redux";
+import { updateField } from "../redux/formSlice";
 
 import InputField from "./InputField";
 import TextareaField from "./TextareaField";
@@ -15,21 +18,17 @@ function ContactForm() {
   //   email: "",
   //   message: "",
   // });
-  const { formData, setFormData } = useContext(FormContext);
+  // const { formData, setFormData } = useContext(FormContext);
   // formData is an object that holds the values of the inputs
+  const formData = useSelector((state) => state.form);
+  const dispatch = useDispatch();
 
   // Step 2: Create state to track validation error
   const [error, setError] = useState("");
 
-  // Step 3: Handle input changes dynamically
   function handleChange(event) {
-    const { name, value } = event.target; // get name of input and its new value
-
-    // Update only the specific field inside formData
-    setFormData((prevData) => ({
-      ...prevData, // keep existing values
-      [name]: value, // update only the field that changed
-    }));
+    const { name, value } = event.target;
+    dispatch(updateField({ name, value }));
   }
 
   // Step 4: Handle form submission with validation
